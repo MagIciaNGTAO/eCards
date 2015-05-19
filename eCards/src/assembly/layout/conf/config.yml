@@ -1,0 +1,11 @@
+## YAML Template.
+---
+app:
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
+    url: http://localhost:1979/
+
+email-services:
+  mailgun:
+  maildrill:
