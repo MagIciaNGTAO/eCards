@@ -1,7 +1,6 @@
 ## Requirement
-
 The following requirements exist for running eCards application:
-  o Java 1.8 Runtime Environment
+* Java 1.8 Runtime Environment
 
 ## Distribution Layout
 ```
