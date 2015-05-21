@@ -1,15 +1,13 @@
-Requirement
------------
+## Requirement
+
 The following requirements exist for running eCards application:
-  o Java Interpreter:
+  o Java 1.8 Runtime Environment
 
-    A fully compliant Java 1.8 Runtime Environment is required to run the .
-    application
-
-
-Distribution Layout
--------------------
-./bin       - Executable Script files
-./conf      - Configuration Files
-./libs      - Third-Party Dependencies
-./logs      - Generated Log Files
+## Distribution Layout
+```
+bin       - Executable script files and application jar file
+conf      - Configuration Files
+libs      - Third-Party Dependencies
+templates - Email Template Files
+logs      - Generated Log Files
+```
