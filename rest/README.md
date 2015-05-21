@@ -13,10 +13,11 @@ and scripts.
 
 ## Running the Application
 To run the application perform the following:
+
 1. Unpack the zip file in "target/rest-x.x.x.bin.tar.gz"
 2. Change directory to the bin director
 3. Run the start script:
-> ./start.sh
+ > ./start.sh
 
 ## Calling the Greeting REST Service
 Once the application starts make sure the application WADL is accessible by
