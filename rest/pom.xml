@@ -11,6 +11,10 @@
     <build>
         <resources>
             <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
                 <directory>${basedir}/src/assembly/layout/conf</directory>
                 <filtering>true</filtering>
             </resource>
@@ -19,6 +23,10 @@
             </resource>
         </resources>
         <testResources>
+            <testResource>
+                <directory>${basedir}/src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
             <testResource>
                 <directory>${basedir}/src/assembly/layout/conf</directory>
                 <filtering>true</filtering>

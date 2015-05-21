@@ -119,4 +119,15 @@ public class SystemTestNG extends JerseyTestNg.ContainerPerClassTest {
 
         assertThat(response.getStatus()).isEqualTo(OK.getStatusCode());
     }
+
+    @Test
+    public void givenInvalidGreetingTypeGreetingsResourceShouldReturnBadRequest() {
+        User greeting = new User("firstname", "lastname", "saden1@gmail.com");
+        Response response = target("greetings")
+                .path("invalid")
+                .request()
+                .post(entity(greeting, MediaType.APPLICATION_JSON_TYPE));
+
+        assertThat(response.getStatus()).isEqualTo(BAD_REQUEST.getStatusCode());
+    }
 }

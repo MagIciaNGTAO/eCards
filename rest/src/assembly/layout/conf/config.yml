@@ -13,7 +13,7 @@ email-services:
   reply:
     email: saden1@gmail.com
     personal: Sharmarke Aden
-  mailgun:
+  mandrill:
     username: saden1@gmail.com
     password: 84vw4p_chEGrcuL6m-s3TQ
     smtp:
@@ -23,7 +23,7 @@ email-services:
         mail.smtp.starttls.enable: yes
         mail.smtp.starttls.required: yes
         mail.debug: yes
-  mandrill:
+  mailgun:
     username: postmaster@sandbox12cf9fbe6d314143999e084b3f144131.mailgun.org
     password: 4fe601b230fd4c9c2f8f88db2300277a
     smtp:

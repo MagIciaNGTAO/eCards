@@ -14,8 +14,8 @@ email-services:
     email: saden1@gmail.com
     personal: Sharmarke Aden
   mandrill:
-    username: saden1@gmail.com
-    password: 84vw4p_chEGrcuL6m-s3TQ
+    username: invalid
+    password: invalid
     smtp:
         mail.smtp.host: smtp.mandrillapp.com
         mail.smtp.port: 587

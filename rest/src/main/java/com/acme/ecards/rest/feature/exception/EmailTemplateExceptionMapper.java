@@ -15,29 +15,21 @@
  */
 package com.acme.ecards.rest.feature.exception;
 
-import javax.ws.rs.core.Configuration;
-import javax.ws.rs.core.Feature;
-import javax.ws.rs.core.FeatureContext;
+import com.acme.ecards.api.template.EmailTemplateException;
+import javax.ws.rs.core.Response;
+import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
+import static javax.ws.rs.core.Response.status;
+import javax.ws.rs.ext.ExceptionMapper;
 
 /**
  *
- * @author Sharmarke Aden (saden1)
+ * @author Sharmarke Aden (saden)
  */
-public class ExceptionMappingFeature implements Feature {
+public class EmailTemplateExceptionMapper implements ExceptionMapper<EmailTemplateException> {
 
     @Override
-    public boolean configure(FeatureContext context) {
-        Configuration configuration = context.getConfiguration();
-
-        if (!configuration.isRegistered(ServiceKernalExceptionMapper.class)) {
-            context.register(ServiceKernalExceptionMapper.class);
-        }
-
-        if (!configuration.isRegistered(EmailTemplateExceptionMapper.class)) {
-            context.register(EmailTemplateExceptionMapper.class);
-        }
-
-        return true;
+    public Response toResponse(EmailTemplateException exception) {
+        return status(BAD_REQUEST).build();
     }
 
 }
