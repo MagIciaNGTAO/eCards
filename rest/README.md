@@ -7,9 +7,9 @@ an email greeting.
 To build the application run:
 > mvn install
 
-Once this module is built it generates a zip file in the target directory that
-contains the rest application along with configuration files, email templates,
-and scripts.
+Once the module is built it generates a zip file in the target directory that
+contains the rest application along with configuration, email templates,
+and scripts files.
 
 ## Running the Application
 To run the application perform the following:
@@ -33,7 +33,7 @@ To send a birthday greeting use curl to post a JSON entity of the user you wish
 to send greetings to:
 > curl -v -H "Content-Type: application/json" -X POST -d '{"firstName":"First Name", "lastName":"Last Name", "email": "local.part@domain.part"}' http://localhost:1979/api/greetings/birthday
 
-Note that the json payload is validate. The entity must have a non-empty first
-and last name, and the email must be a valid email address. In addition the
-content of first/last name and email must be safe html and don't contain
-malicious code, such as embedded <script> elements.
+Note that the json payload is validated using hibernate validator. The entity 
+must have a non-blank first and last name, and the email must be a valid email
+address. In addition the content of first and last name and email must be safe
+html and don't contain malicious code, such as embedded <script> elements.
