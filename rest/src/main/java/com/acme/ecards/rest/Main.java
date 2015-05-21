@@ -16,8 +16,6 @@
 package com.acme.ecards.rest;
 
 import com.acme.ecards.api.kernal.ServiceKernal;
-import com.acme.ecards.rest.feature.hk2.HK2Feature;
-import com.acme.ecards.rest.feature.jackson.Jackson2Feature;
 import java.io.IOException;
 import static java.lang.Runtime.getRuntime;
 import static java.lang.System.exit;
@@ -29,10 +27,6 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer;
 import static org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory.createHttpServer;
-import org.glassfish.jersey.server.ResourceConfig;
-import static org.glassfish.jersey.server.ServerProperties.BV_DISABLE_VALIDATE_ON_EXECUTABLE_OVERRIDE_CHECK;
-import static org.glassfish.jersey.server.ServerProperties.BV_SEND_ERROR_IN_RESPONSE;
-import static org.glassfish.jersey.server.ServerProperties.RESPONSE_SET_STATUS_OVER_SEND_ERROR;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,6 +46,7 @@ public class Main {
     }
 
     private final boolean isDevMode;
+    private HttpServer server;
 
     public Main(boolean isDevMode) {
         this.isDevMode = isDevMode;
@@ -62,14 +57,7 @@ public class Main {
      */
     public void startServer(String[] args) {
         LOG.info("Configuring Server");
-        ResourceConfig config = new ResourceConfig()
-                .setApplicationName("eCards")
-                .packages("com.acme.ecards.rest.resource")
-                .register(HK2Feature.class)
-                .register(Jackson2Feature.class)
-                .property(BV_SEND_ERROR_IN_RESPONSE, true)
-                .property(BV_DISABLE_VALIDATE_ON_EXECUTABLE_OVERRIDE_CHECK, true)
-                .property(RESPONSE_SET_STATUS_OVER_SEND_ERROR, true);
+
         URI uri;
         //if we are in test mode then use the first available port otherwise
         //use the port specified in the base uri.
@@ -80,7 +68,7 @@ public class Main {
         }
         LOG.info("Creating Server");
         //create an instance of grizzly http server
-        final HttpServer server = createHttpServer(uri, config);
+        server = createHttpServer(uri, new ApiApplication());
         try {
             LOG.info("Starting Server");
             //start the grizzly http server
@@ -133,6 +121,14 @@ public class Main {
                 //expected exception. NO-OP.
             }
         }
+    }
+
+    public boolean isStarted() {
+        return server.isStarted();
+    }
+
+    public void shutdown() {
+        server.shutdown();
     }
 
 }

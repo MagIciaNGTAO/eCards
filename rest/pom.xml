@@ -12,23 +12,19 @@
         <resources>
             <resource>
                 <directory>${basedir}/src/assembly/layout/conf</directory>
+                <filtering>true</filtering>
             </resource>
             <resource>
                 <directory>${basedir}/src/assembly/layout/templates</directory>
-            </resource>
-            <resource>
-                <directory>${basedir}/src/assembly/layout/ui</directory>
             </resource>
         </resources>
         <testResources>
             <testResource>
                 <directory>${basedir}/src/assembly/layout/conf</directory>
+                <filtering>true</filtering>
             </testResource>
             <testResource>
                 <directory>${basedir}/src/assembly/layout/templates</directory>
-            </testResource>
-            <testResource>
-                <directory>${basedir}/src/assembly/layout/ui</directory>
             </testResource>
         </testResources>
         <plugins>
@@ -116,9 +112,13 @@
             <version>${hk2.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.8.1</version>
+            <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+            <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.test-framework</groupId>
+            <artifactId>jersey-test-framework-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

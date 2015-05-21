@@ -13,32 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.acme.ecards.rest.feature.listener;
+package com.acme.ecards.rest.feature.exception;
 
-import com.acme.ecards.api.kernal.ServiceKernal;
-import javax.inject.Inject;
-import org.glassfish.jersey.server.monitoring.RequestEvent;
-import org.glassfish.jersey.server.monitoring.RequestEventListener;
+import javax.ws.rs.core.Configuration;
+import javax.ws.rs.core.Feature;
+import javax.ws.rs.core.FeatureContext;
 
 /**
  *
  * @author Sharmarke Aden (saden1)
  */
-public class RequestExceptionEventListener implements RequestEventListener {
-
-    private final ServiceKernal serviceKernal;
-
-    @Inject
-    RequestExceptionEventListener(ServiceKernal serviceKernal) {
-        this.serviceKernal = serviceKernal;
-    }
+public class ExceptionMappingFeature implements Feature {
 
     @Override
-    public void onEvent(RequestEvent event) {
-        switch (event.getType()) {
-            case ON_EXCEPTION:
-                break;
+    public boolean configure(FeatureContext context) {
+        Configuration configuration = context.getConfiguration();
 
+        if (!configuration.isRegistered(ServiceKernalExceptionMapper.class)) {
+            context.register(ServiceKernalExceptionMapper.class);
         }
+
+        return true;
     }
+
 }

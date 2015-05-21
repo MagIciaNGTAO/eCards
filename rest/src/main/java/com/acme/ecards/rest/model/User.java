@@ -20,14 +20,24 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.SafeHtml;
 
 /**
+ * Validation constrained user request entity object.
  *
  * @author Sharmarke Aden (saden1)
  */
-public class Greeting {
+public class User {
 
     private String firstName;
     private String lastName;
     private String email;
+
+    public User() {
+    }
+
+    public User(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
 
     @SafeHtml
     @NotBlank
