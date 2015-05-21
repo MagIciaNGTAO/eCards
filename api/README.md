@@ -1,16 +1,17 @@
-## eCards API
 
 This module contains the core API for sending emails (greetings or otherwise).
-It supports  sending emails via a primary email service provider and in the even
-failure of the primary provider falls backs on the backup email service provider.
+It supports sending emails through a primary email service provider and in the
+even failure through a backup email service provider.
 
-The API uses HK2 Dependency Injection Framework to create and wire services. In
-addition to that it utilizes HK2 RunLevel feature to manage application state.
-The basic principle behind run level service is that certain services
-(i.e. backup services) become available on-demand and in the even of system state
+The API uses HK2 Dependency Injection Framework to create, wire, and manage
+services. In addition it utilizes HK2 RunLevel feature to manage application
+state.
+
+The basic principle behind run level service is that certain services (i.e.
+backup services) can become available on-demand or in the even of system state
 change (i.e. exception or service failure). For example, when the primary email
 service provider fails the application transitions to "failover" and thus
-enabling backup email service provider.
+enabling the backup email service provider.
 
 ## API Overview
 
@@ -29,11 +30,12 @@ The javamail package contains java mail related factory provider classes.
 
 ### Kernal
 The kernal package contains classes for managing and reporting the state of
-application. ServiceKernal class is where he magic of transitioning the
-application to a different state can be triggered. When the application starts
-ServiceKernal needs to be instantiated in order to transition the application to
-startup state. In the event of an ServiceKernalException or subtypes of it users
-should call the ServiceKernal.failover() to brining up backup services.
+application. ServiceKernal class is where the magic of transitioning the
+application to a different state managed. When the application starts users
+need to instantiate ServiceKernal service to order to transition the application
+to startup state (implicitly done during service creation). In the event of a
+ServiceKernalException type exception users should call the ServiceKernal.failover()
+to brining up and switch to backup services.
 
 ### Template
 The template package contains api to to load and interpolate email templates

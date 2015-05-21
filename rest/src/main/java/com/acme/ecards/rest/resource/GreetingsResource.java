@@ -42,7 +42,7 @@ import org.glassfish.jersey.server.ManagedAsync;
  *
  * @author Sharmarke Aden (saden1)
  */
-@Path("geetings")
+@Path("greetings")
 public class GreetingsResource {
 
     private final EmailService emailService;

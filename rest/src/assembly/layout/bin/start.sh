@@ -1,7 +1,8 @@
 #!/bin/bash
 
-base_dir=$(dirname $0)
-app_jar=eCards.jar
+base_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd $base_dir
+app_jar=rest.jar
 
 # Which java to use
 if [ -z "$JAVA_HOME" ]; then
