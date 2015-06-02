@@ -36,4 +36,4 @@ to send greetings to:
 Note that the json payload is validated using hibernate validator. The entity 
 must have a non-blank first and last name, and the email must be a valid email
 address. In addition the content of first and last name and email must be safe
-html and don't contain malicious code, such as embedded <script> elements.
+html and don't contain malicious code, such as embedded \<script\> elements.
