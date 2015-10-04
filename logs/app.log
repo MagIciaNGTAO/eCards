@@ -1,0 +1,7 @@
+17:02:15.964 [pool-1-thread-1] INFO  main - Configuring Server
+17:02:17.106 [pool-1-thread-1] INFO  main - Creating Server
+17:02:19.775 [pool-1-thread-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.2.Final
+17:02:20.243 [pool-1-thread-1] INFO  service.kernel - Service kernel proceeding to startup state [run level 10]
+17:02:21.578 [pool-1-thread-1] INFO  main - Starting Server
+17:02:21.628 [pool-1-thread-1] INFO  main - Server Started at => http://localhost:62412/api
+17:02:21.756 [TCPNIOTransport[76686573]-Shutdown-Thread(0)] INFO  service.kernel - Service kernel receding to shutdown state [run level 10]

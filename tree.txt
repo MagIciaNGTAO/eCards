@@ -1,0 +1,156 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] eCards
+[INFO] api
+[INFO] rest
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building eCards 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ parent ---
+[INFO] com.acme.ecards:parent:pom:0.0.1-SNAPSHOT
+[INFO] +- org.testng:testng:jar:6.9.4:test
+[INFO] |  +- org.beanshell:bsh:jar:2.0b4:test
+[INFO] |  \- com.beust:jcommander:jar:1.48:test
+[INFO] +- org.mockito:mockito-all:jar:1.10.19:test
+[INFO] +- org.glassfish.hk2:hk2-testng:jar:2.4.0-b22:test
+[INFO] |  +- org.glassfish.hk2:hk2-extras:jar:2.4.0-b22:test
+[INFO] |  |  \- javax.inject:javax.inject:jar:1:compile
+[INFO] |  +- org.glassfish.hk2:hk2-api:jar:2.4.0-b22:compile
+[INFO] |  +- org.glassfish.hk2.external:javax.inject:jar:2.4.0-b22:compile
+[INFO] |  \- org.glassfish.hk2.external:asm-all-repackaged:jar:2.4.0-b22:test
+[INFO] +- org.assertj:assertj-core:jar:3.0.0:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.7:compile
+[INFO] +- ch.qos.logback:logback-classic:jar:1.1.3:compile
+[INFO] |  \- ch.qos.logback:logback-core:jar:1.1.3:compile
+[INFO] +- org.fusesource.jansi:jansi:jar:1.11:compile
+[INFO] +- org.glassfish.hk2:hk2-locator:jar:2.4.0-b22:compile
+[INFO] |  +- org.glassfish.hk2.external:aopalliance-repackaged:jar:2.4.0-b22:compile
+[INFO] |  +- org.glassfish.hk2:hk2-utils:jar:2.4.0-b22:compile
+[INFO] |  \- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] \- org.glassfish.hk2:hk2-runlevel:jar:2.4.0-b22:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building api 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ api ---
+[INFO] com.acme.ecards:api:jar:0.0.1-SNAPSHOT
+[INFO] +- org.glassfish.hk2:hk2-runlevel:jar:2.4.0-b22:compile
+[INFO] |  \- org.glassfish.hk2:hk2-api:jar:2.4.0-b22:compile
+[INFO] |     \- javax.inject:javax.inject:jar:1:compile
+[INFO] +- org.fusesource.jansi:jansi:jar:1.11:compile
+[INFO] +- org.yaml:snakeyaml:jar:1.15:compile
+[INFO] +- com.sun.mail:javax.mail:jar:1.5.3:compile
+[INFO] |  \- javax.activation:activation:jar:1.1:compile
+[INFO] +- com.github.jknack:handlebars:jar:2.1.0:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.1:compile
+[INFO] |  +- org.antlr:antlr4-runtime:jar:4.5:compile
+[INFO] |  \- org.mozilla:rhino:jar:1.7R4:compile
+[INFO] +- com.google.guava:guava:jar:18.0:compile
+[INFO] +- org.testng:testng:jar:6.9.4:test
+[INFO] |  +- org.beanshell:bsh:jar:2.0b4:test
+[INFO] |  \- com.beust:jcommander:jar:1.48:test
+[INFO] +- org.mockito:mockito-all:jar:1.10.19:test
+[INFO] +- org.glassfish.hk2:hk2-testng:jar:2.4.0-b22:test
+[INFO] |  +- org.glassfish.hk2:hk2-extras:jar:2.4.0-b22:test
+[INFO] |  +- org.glassfish.hk2.external:javax.inject:jar:2.4.0-b22:compile
+[INFO] |  \- org.glassfish.hk2.external:asm-all-repackaged:jar:2.4.0-b22:test
+[INFO] +- org.assertj:assertj-core:jar:3.0.0:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.7:compile
+[INFO] +- ch.qos.logback:logback-classic:jar:1.1.3:compile
+[INFO] |  \- ch.qos.logback:logback-core:jar:1.1.3:compile
+[INFO] \- org.glassfish.hk2:hk2-locator:jar:2.4.0-b22:compile
+[INFO]    +- org.glassfish.hk2.external:aopalliance-repackaged:jar:2.4.0-b22:compile
+[INFO]    +- org.glassfish.hk2:hk2-utils:jar:2.4.0-b22:compile
+[INFO]    \- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rest 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ rest ---
+[INFO] com.acme.ecards:rest:jar:0.0.1-SNAPSHOT
+[INFO] +- com.acme.ecards:api:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  +- org.yaml:snakeyaml:jar:1.15:compile
+[INFO] |  +- com.sun.mail:javax.mail:jar:1.5.3:compile
+[INFO] |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  +- com.github.jknack:handlebars:jar:2.1.0:compile
+[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.1:compile
+[INFO] |  |  +- org.antlr:antlr4-runtime:jar:4.5:compile
+[INFO] |  |  \- org.mozilla:rhino:jar:1.7R4:compile
+[INFO] |  \- com.google.guava:guava:jar:18.0:compile
+[INFO] +- org.glassfish.jersey.containers:jersey-container-grizzly2-http:jar:2.17:compile
+[INFO] |  +- org.glassfish.hk2.external:javax.inject:jar:2.4.0-b10:compile
+[INFO] |  +- org.glassfish.grizzly:grizzly-http-server:jar:2.3.16:compile
+[INFO] |  |  \- org.glassfish.grizzly:grizzly-http:jar:2.3.16:compile
+[INFO] |  |     \- org.glassfish.grizzly:grizzly-framework:jar:2.3.16:compile
+[INFO] |  +- org.glassfish.jersey.core:jersey-common:jar:2.17:compile
+[INFO] |  |  +- javax.annotation:javax.annotation-api:jar:1.2:compile
+[INFO] |  |  +- org.glassfish.jersey.bundles.repackaged:jersey-guava:jar:2.17:compile
+[INFO] |  |  \- org.glassfish.hk2:osgi-resource-locator:jar:1.0.1:compile
+[INFO] |  +- org.glassfish.jersey.core:jersey-server:jar:2.17:compile
+[INFO] |  |  +- org.glassfish.jersey.core:jersey-client:jar:2.17:compile
+[INFO] |  |  \- org.glassfish.jersey.media:jersey-media-jaxb:jar:2.17:compile
+[INFO] |  \- javax.ws.rs:javax.ws.rs-api:jar:2.0.1:compile
+[INFO] +- org.glassfish.jersey.media:jersey-media-json-jackson:jar:2.17:compile
+[INFO] |  +- org.glassfish.jersey.ext:jersey-entity-filtering:jar:2.17:compile
+[INFO] |  +- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.3.2:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-core:jar:2.3.2:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-databind:jar:2.3.2:compile
+[INFO] |  +- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.3.2:compile
+[INFO] |  |  \- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.3.2:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.3.2:compile
+[INFO] +- org.glassfish.jersey.ext:jersey-bean-validation:jar:2.17:compile
+[INFO] |  +- javax.validation:validation-api:jar:1.1.0.Final:compile
+[INFO] |  +- org.hibernate:hibernate-validator:jar:5.1.2.Final:compile
+[INFO] |  |  +- org.jboss.logging:jboss-logging:jar:3.1.3.GA:compile
+[INFO] |  |  \- com.fasterxml:classmate:jar:1.0.0:compile
+[INFO] |  +- javax.el:javax.el-api:jar:2.2.4:compile
+[INFO] |  \- org.glassfish.web:javax.el:jar:2.2.4:compile
+[INFO] +- org.jsoup:jsoup:jar:1.8.2:compile
+[INFO] +- org.glassfish.hk2:hk2-extras:jar:2.4.0-b22:compile
+[INFO] |  +- javax.inject:javax.inject:jar:1:compile
+[INFO] |  +- org.glassfish.hk2:hk2-utils:jar:2.4.0-b22:compile
+[INFO] |  +- org.glassfish.hk2:hk2-api:jar:2.4.0-b22:compile
+[INFO] |  \- org.glassfish.hk2.external:aopalliance-repackaged:jar:2.4.0-b22:compile
+[INFO] +- org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:jar:2.17:test
+[INFO] |  +- org.glassfish.jersey.containers:jersey-container-grizzly2-servlet:jar:2.17:test
+[INFO] |  |  +- org.glassfish.jersey.containers:jersey-container-servlet:jar:2.17:test
+[INFO] |  |  \- org.glassfish.grizzly:grizzly-http-servlet:jar:2.3.16:test
+[INFO] |  +- junit:junit:jar:4.11:test
+[INFO] |  |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  \- org.ow2.asm:asm-debug-all:jar:5.0.2:test
+[INFO] +- org.glassfish.jersey.test-framework:jersey-test-framework-core:jar:2.17:test
+[INFO] |  +- org.glassfish.jersey.containers:jersey-container-servlet-core:jar:2.17:test
+[INFO] |  \- javax.servlet:javax.servlet-api:jar:3.0.1:test
+[INFO] +- org.testng:testng:jar:6.9.4:test
+[INFO] |  +- org.beanshell:bsh:jar:2.0b4:test
+[INFO] |  \- com.beust:jcommander:jar:1.48:test
+[INFO] +- org.mockito:mockito-all:jar:1.10.19:test
+[INFO] +- org.glassfish.hk2:hk2-testng:jar:2.4.0-b22:test
+[INFO] |  \- org.glassfish.hk2.external:asm-all-repackaged:jar:2.4.0-b22:test
+[INFO] +- org.assertj:assertj-core:jar:3.0.0:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.7:compile
+[INFO] +- ch.qos.logback:logback-classic:jar:1.1.3:compile
+[INFO] |  \- ch.qos.logback:logback-core:jar:1.1.3:compile
+[INFO] +- org.fusesource.jansi:jansi:jar:1.11:compile
+[INFO] +- org.glassfish.hk2:hk2-locator:jar:2.4.0-b22:compile
+[INFO] |  \- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] \- org.glassfish.hk2:hk2-runlevel:jar:2.4.0-b22:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] eCards ............................................ SUCCESS [5.560s]
+[INFO] api ............................................... SUCCESS [0.434s]
+[INFO] rest .............................................. SUCCESS [0.471s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.470s
+[INFO] Finished at: Sun Oct 04 13:57:51 EDT 2015
+[INFO] Final Memory: 14M/112M
+[INFO] ------------------------------------------------------------------------
